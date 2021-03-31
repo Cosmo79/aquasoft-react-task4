@@ -1,7 +1,10 @@
 import { useSelector } from "react-redux";
 
+import { Link } from "react-router-dom";
+
 export function ProjectList() {
   const { entities } = useSelector((state) => state.projects);
+  
   return (
     <div className="container">
       <div className="row">
@@ -30,7 +33,9 @@ export function ProjectList() {
                 <td>{description}</td>
                 <td>{project_code}</td>
                 <td>
-                  <button type="button" class="btn btn-success">View Employees</button>
+                  <Link to={`/view-employees/${id}`}>
+                    <button type="button" class="btn btn-success">View Employees</button>
+                  </Link>
                 </td>
               </tr>
             ))}

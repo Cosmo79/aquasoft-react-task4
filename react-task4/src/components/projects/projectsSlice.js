@@ -3,6 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const fetchProjects = createAsyncThunk("fetchProjects", async () => {
   const response = await fetch("http://localhost:3000/projects");
   const projects = await response.json();
+  console.log(projects);
   return projects;
 });
 
